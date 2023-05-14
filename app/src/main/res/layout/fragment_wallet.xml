@@ -52,7 +52,6 @@
                     app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
                 <LinearLayout
-                    android:id="@+id/linearLayout"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -79,7 +78,6 @@
                             android:layout_height="match_parent">
 
                             <TextView
-                                android:id="@+id/textView41"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Salio kuu"
@@ -98,7 +96,6 @@
                             android:layout_height="match_parent">
 
                             <TextView
-                                android:id="@+id/textView48"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Thamani ya hisa"
@@ -117,7 +114,6 @@
                             android:layout_height="match_parent">
 
                             <TextView
-                                android:id="@+id/textView50"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Miadi ya kazi"
@@ -136,7 +132,6 @@
                             android:layout_height="match_parent">
 
                             <TextView
-                                android:id="@+id/textView52"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginEnd="24dp"
@@ -154,7 +149,6 @@
                     </TableLayout>
 
                     <View
-                        android:id="@+id/divider4"
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:layout_marginTop="10dp"
@@ -168,7 +162,6 @@
                         android:layout_marginEnd="15dp">
 
                         <TextView
-                            android:id="@+id/textView4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="JUMLA KUU"

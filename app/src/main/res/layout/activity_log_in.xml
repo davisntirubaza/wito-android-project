@@ -8,7 +8,6 @@
     tools:context="wito.government.app.LogIn">
 
     <ImageView
-        android:id="@+id/imageView5"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:alpha=".6"
@@ -35,7 +34,6 @@
             android:paddingBottom="30dp">
 
             <ImageView
-                android:id="@+id/imageView10"
                 android:layout_width="match_parent"
                 android:layout_height="121dp"
                 android:adjustViewBounds="true"
@@ -47,7 +45,6 @@
                 android:background="@color/primaryColor" />
 
             <TextView
-                android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"

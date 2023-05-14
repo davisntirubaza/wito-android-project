@@ -7,7 +7,6 @@
     tools:context="wito.government.app.SplashScreen">
 
     <ImageView
-        android:id="@+id/imageView"
         android:layout_width="136dp"
         android:layout_height="119dp"
         android:adjustViewBounds="true"

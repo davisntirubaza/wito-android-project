@@ -9,7 +9,6 @@
     tools:context="wito.government.app.Register">
 
     <ImageView
-        android:id="@+id/imageView14"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:alpha=".7"
@@ -31,14 +30,12 @@
             android:paddingBottom="30dp">
 
             <ImageView
-                android:id="@+id/imageView15"
                 android:layout_width="match_parent"
                 android:layout_height="121dp"
                 android:adjustViewBounds="true"
                 app:srcCompat="@drawable/symbol_logo" />
 
             <TextView
-                android:id="@+id/textView6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -152,7 +149,6 @@
                 android:textSize="16sp" />
 
             <EditText
-                android:id="@+id/editTextText5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"

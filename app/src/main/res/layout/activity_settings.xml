@@ -7,7 +7,6 @@
     tools:context="wito.government.app.Notifications">
 
     <TextView
-        android:id="@+id/textView20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
