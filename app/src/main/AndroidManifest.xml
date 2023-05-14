@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/wito_app_icon"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.HMD"
+        tools:targetApi="31" >
+        <activity
+            android:name="wito.government.app.activities.Settings"
+            android:exported="false" />
+        <activity
+            android:name="wito.government.app.activities.About"
+            android:exported="false" />
+
+        <activity
+            android:name="wito.government.app.activities.ItemViewer"
+            android:exported="false" />
+
+        <activity
+            android:name="wito.government.app.activities.ProductViewer"
+            android:exported="false" />
+        <activity
+            android:name="wito.government.app.Notifications"
+            android:exported="false" />
+        <activity
+            android:name="wito.government.app.SplashScreen"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:exported="false" />
+        <activity
+            android:name="wito.government.app.Register"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:exported="false" />
+        <activity
+            android:name="wito.government.app.activities.ArticleViewer"
+            android:exported="false" />
+        <activity
+            android:name="wito.government.app.Home"
+            android:exported="false" />
+        <activity
+            android:name="wito.government.app.WelcomeScreen"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:exported="false" />
+        <activity
+            android:name="wito.government.app.LogIn"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1050068027796",
+    "project_id": "govw-fab38",
+    "storage_bucket": "govw-fab38.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1050068027796:android:ddf0ec588e7756383b6781",
+        "android_client_info": {
+          "package_name": "wito.government.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1050068027796-6q9kchhs4vkp2i3cbm3pv6fgtpnq3d4s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAakbpJbSzCBNNHQZ3i-oojW318bQUaXHU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1050068027796-6q9kchhs4vkp2i3cbm3pv6fgtpnq3d4s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
