@@ -91,6 +91,7 @@ public class ItemViewer extends AppCompatActivity {
         player.setMediaSource(mediaSource);
         player.prepare();
         PlayerView playerView = findViewById(R.id.player_view);
+//        playerView.setUseController(false);
         playerView.setPlayer(player);
         player.play();
 
@@ -115,8 +116,46 @@ public class ItemViewer extends AppCompatActivity {
         };
 
         nunuaHisaBtn.setOnClickListener(listener);
-        uzaHisaBtn.setOnClickListener(listener);
-        miadiBtn.setOnClickListener(listener);
+        uzaHisaBtn.setOnClickListener(l -> uzaHisa());
+        miadiBtn.setOnClickListener(m -> miadiYaKazi());
+    }
+
+    private void uzaHisa() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(ItemViewer.this);
+        builder.setTitle("Uza hisa");
+
+        View view = getLayoutInflater().inflate(R.layout.dialog_uza_hisa, null);
+        builder.setView(view);
+        EditText edt_kiasi = view.findViewById(R.id.edt_kiasi_uza);
+        EditText edt_neno_siri = view.findViewById(R.id.edt_neno_siri_uza);
+        EditText edt_rudia_neno_siri = view.findViewById(R.id.edt_rudia_neno_siri_uza);
+        TextView cancel_button = view.findViewById(R.id.cancel_button_uza);
+
+        Button btn_uza_hisa = view.findViewById(R.id.btn_uza_hisa);
+
+        final AlertDialog dialog = builder.create();
+
+        btn_uza_hisa.setOnClickListener(view1 -> {
+            if (edt_kiasi.getText().toString().isEmpty()) {
+                edt_kiasi.setError("Tafadhali weka kiasi!");
+                edt_kiasi.requestFocus();
+            } else if (edt_neno_siri.getText().toString().trim().isEmpty()) {
+                edt_neno_siri.setError("Tafadhali ingiza neno siri!");
+                edt_neno_siri.requestFocus();
+            } else if (edt_rudia_neno_siri.getText().toString().trim().isEmpty()) {
+                edt_rudia_neno_siri.setError("Tafadhali rudia neno siri!");
+                edt_rudia_neno_siri.requestFocus();
+            } else if (!edt_neno_siri.getText().toString().trim().equals(edt_rudia_neno_siri.getText().toString().trim())) {
+                edt_rudia_neno_siri.setError("Neno siri halifanani");
+                edt_rudia_neno_siri.requestFocus();
+            } else {
+                Toast.makeText(ItemViewer.this, "Ombi lako linashughulikiwa!", Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
+            }
+        });
+
+        cancel_button.setOnClickListener(view12 -> dialog.dismiss());
+        dialog.show();
     }
 
     private void NunuaHisa() {
@@ -148,7 +187,46 @@ public class ItemViewer extends AppCompatActivity {
                 edt_rudia_neno_siri.setError("Neno siri halifanani");
                 edt_rudia_neno_siri.requestFocus();
             } else {
-                Toast.makeText(ItemViewer.this, "Hello", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ItemViewer.this, "Ombi lako linashughulikiwa!", Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
+            }
+        });
+
+        cancel_button.setOnClickListener(view12 -> dialog.dismiss());
+        dialog.show();
+    }
+
+    private void miadiYaKazi() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(ItemViewer.this);
+        builder.setTitle("Miadi ya kazi");
+
+        View view = getLayoutInflater().inflate(R.layout.dialog_miadi_ya_kazi, null);
+        builder.setView(view);
+        EditText kuanziaTarehe = view.findViewById(R.id.edt_kuanzia_tarehe);
+        EditText hadiTarehe = view.findViewById(R.id.edt_hadi_tarehe);
+        EditText uthibitisho = view.findViewById(R.id.edt_thibitisha_miadi);
+        TextView cancel_button = view.findViewById(R.id.cancel_button_miadi);
+
+        Button btnThibitishaMiadi = view.findViewById(R.id.btn_kamilisha_miadi);
+
+        final AlertDialog dialog = builder.create();
+
+        btnThibitishaMiadi.setOnClickListener(view1 -> {
+            if (kuanziaTarehe.getText().toString().isEmpty()) {
+                kuanziaTarehe.setError("Tafadhali andika !");
+                kuanziaTarehe.requestFocus();
+            } else if (hadiTarehe.getText().toString().trim().isEmpty()) {
+                hadiTarehe.setError("Tafadhali andika tarehe ya kumaliza!");
+                hadiTarehe.requestFocus();
+            } else if (uthibitisho.getText().toString().trim().isEmpty()) {
+                uthibitisho.setError("Tafadhali rudia neno siri!");
+                uthibitisho.requestFocus();
+            } else if (uthibitisho.getText().toString().trim().isEmpty()) {
+                uthibitisho.setError("Ingiza uthibitisho wa mradi!");
+                uthibitisho.requestFocus();
+            } else {
+                Toast.makeText(ItemViewer.this, "Ombi lako linashughulikiwa!", Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
             }
         });
 

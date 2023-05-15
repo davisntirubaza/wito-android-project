@@ -1,5 +1,6 @@
 package wito.government.app;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
@@ -16,6 +17,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -23,6 +26,7 @@ import wito.government.app.classes.DatabaseHelper;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class Register extends AppCompatActivity {
 
@@ -70,24 +74,31 @@ public class Register extends AppCompatActivity {
             }else {
 //                showToast("Tafadhali subiri...");
 
+                HashMap<String, Integer> wallet = new HashMap<>();
+                wallet.put("salioKuu", 0);
+                wallet.put("thamaniHisa", 0);
+                wallet.put("idadiMiadi", 0);
+                wallet.put("hisaKusubiri", 0);
+
                 String userId = System.currentTimeMillis() + "";
-                ContentValues cv = new ContentValues();
+                HashMap<String,String> cv = new HashMap<>();
                 cv.put("firstName", fname);
                 cv.put("lastName", lname);
                 cv.put("phone", phone);
                 cv.put("password", password);
                 cv.put("nida", nida);
-                cv.put("id", userId);
+//                cv.put("id", userId);
 
-                DatabaseReference userReference = FirebaseDatabase.getInstance().getReference("users/" + userId);
-                userReference.setValue(cv);
-
-                DatabaseHelper databaseHelper = new DatabaseHelper(getApplicationContext());
-                databaseHelper.addToTable("userInfo", cv);
-                showToast("Registered successfully!");
-                Intent goHome = new Intent(getApplicationContext(), LogIn.class);
-                startActivity(goHome);
-                finish();
+                DatabaseReference userReference = FirebaseDatabase.getInstance().getReference("users/" + phone);
+                userReference.setValue(cv).addOnSuccessListener(unused -> {
+                    userReference.child("wallet").setValue(wallet);
+                    showToast("Registered successfully!");
+                    Intent goHome = new Intent(getApplicationContext(), LogIn.class);
+                    startActivity(goHome);
+                    finish();
+                }).addOnFailureListener(e -> {
+                    showToast("ERROR:" + e.getMessage());
+                });
             }
         });
     }

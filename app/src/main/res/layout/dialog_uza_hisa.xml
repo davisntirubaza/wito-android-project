@@ -1,0 +1,86 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_bg"
+    android:orientation="vertical"
+    android:padding="16sp">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/cancel_button_uza"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:drawableStart="@drawable/baseline_close_24"
+            android:textSize="24sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="98sp"
+                android:layout_height="98sp"
+                android:layout_gravity="center_horizontal"
+                android:padding="5sp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/baseline_monetization_on_24"
+                app:tint="#FF6843" />
+
+            <EditText
+                android:id="@+id/edt_kiasi_uza"
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:layout_marginTop="15sp"
+                android:background="@drawable/gray_box"
+                android:hint="Weka kiasi"
+                android:inputType="number"
+                android:paddingStart="16sp"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/edt_neno_siri_uza"
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:layout_marginTop="15sp"
+                android:background="@drawable/gray_box"
+                android:hint="Neno siri"
+                android:inputType="textPassword"
+                android:paddingStart="16sp"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/edt_rudia_neno_siri_uza"
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:layout_marginTop="15sp"
+                android:background="@drawable/gray_box"
+                android:hint="Rudia neno siri"
+                android:paddingStart="16sp"
+                android:textSize="16sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_uza_hisa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15sp"
+                android:background="@drawable/blue_button_shade"
+                android:text="Kamilisha"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+    </FrameLayout>
+
+    <!--WEKA IMAGE YA DOLLA HYO, MIM NMEWEK YOYOTR TU HUKU-->
+
+    <!--BUTTON STYLE NADHAN UNAYO SO WEKA KUTOKAN N DESIGN YA HUKO-->
+
+</LinearLayout>

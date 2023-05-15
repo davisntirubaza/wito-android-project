@@ -1,5 +1,6 @@
 package wito.government.app;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
@@ -13,8 +14,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import wito.government.app.classes.DatabaseHelper;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class LogIn extends AppCompatActivity {
@@ -40,37 +48,74 @@ public class LogIn extends AppCompatActivity {
         mgeniBtn = findViewById(R.id.button7);
 
         mgeniBtn.setOnClickListener(r -> startActivity(new Intent(getApplicationContext(), Register.class)));
-        DatabaseHelper databaseHelper = new DatabaseHelper(getApplicationContext());
-        HashMap<String, String> data = databaseHelper.getTableData("userInfo");
-        String savedphone = data.get("phone");
-        String savedpassword = data.get("password");
+//        DatabaseHelper databaseHelper = new DatabaseHelper(getApplicationContext());
+//        HashMap<String, String> data = databaseHelper.getTableData("userInfo");
+//        String savedphone = data.get("phone");
+//        String savedpassword = data.get("password");
 
 //        showToast("DATA = " + data);
 
-        submitBtn.setOnClickListener(f -> {
-            String phone = phoneField.getText().toString();
-            String password = passField.getText().toString();
+        DatabaseReference userRef = FirebaseDatabase.getInstance().getReference("users");
+        userRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    ArrayList<HashMap<String, String>> users = new ArrayList<>();
+                    for (DataSnapshot user : snapshot.getChildren()) {
+                        HashMap<String, String> userData = new HashMap<>();
+                        for (DataSnapshot rows : user.getChildren()) {
+                            String k = rows.getKey(), v = rows.getValue().toString();
+                            userData.put(k, v);
+                        }
+                        users.add(userData);
+                    }
 
-//            showToast("SAVED_PASSWORD = " + savedpassword + "\nSAVED_PHONE = " + savedphone);
+//                    showToast("DATA_SIZE = " + users.size());
 
-            if (phone.isEmpty()) {
-                showToast("Ingiza namba yako ya simu!");
-                phoneField.requestFocus();
-            } else if (password.isEmpty()) {
-                showToast("Ingiza nenosiri!");
-                passField.requestFocus();
-            } else {
-                if (phone.equals(savedphone) && password.equals(savedpassword)) {
-                    showToast("Umefanikiwa kuingia!");
-                    Intent enter = new Intent(getApplicationContext(), Home.class);
-                    startActivity(enter);
-                    finish();
-                } else {
-                    showToast("Namba ya simu au nenosiri limekosewa!");
+                    submitBtn.setOnClickListener(f -> {
+                        String phone = phoneField.getText().toString();
+                        String password = passField.getText().toString();
+
+                        if (phone.isEmpty()) {
+                            phoneField.setError("Ingiza namba yako ya simu!");
+                            phoneField.requestFocus();
+                        } else if (password.isEmpty()) {
+                            passField.setError("Ingiza nenosiri!");
+                            passField.requestFocus();
+                        } else {
+                            if (authenticateUser(phone, password, users)) {
+//                                showToast("Umefanikiwa kuingia!");
+                                Intent enter = new Intent(getApplicationContext(), Home.class);
+                                enter.putExtra("phone", phone);
+                                startActivity(enter);
+                                finish();
+                            } else {
+                                showToast("Namba ya simu au nenosiri limekosewa!");
+                            }
+
+                        }
+                    });
                 }
+            }
+
+            public boolean authenticateUser(String phone, String password, ArrayList <HashMap<String,String>> data) {
+                for (HashMap<String,String> user : data) {
+                    if (phone.equals(user.get("phone"))) {
+                        String savedPassword = user.get("password");
+                        if (savedPassword.equals(password)) return true;
+                    }
+                }
+                return false;
+            }
+
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
 
             }
         });
+
+
     }
 
     public void showToast(String message) {

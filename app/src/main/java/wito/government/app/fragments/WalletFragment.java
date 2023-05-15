@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -17,6 +18,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import wito.government.app.Home;
 import wito.government.app.R;
 import wito.government.app.activities.ArticleViewer;
 import wito.government.app.activities.About;
@@ -91,25 +99,64 @@ public class WalletFragment extends Fragment {
         thamaniHisa = d.findViewById(R.id.textView49);
         idadiMiadi = d.findViewById(R.id.textView51);
         hisaKusubiri = d.findViewById(R.id.textView53);
-
         jumlaKuu = d.findViewById(R.id.textView3);
+
+        DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference("users/" + Home.phone);
+        dbRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    HashMap<String, String> data = new HashMap<>();
+
+                    for (DataSnapshot row : snapshot.getChildren()) {
+                        data.put(row.getKey(), row.getValue().toString());
+                    }
+
+                    name.setText(data.get("firstName") + " " + data.get("lastName"));
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        DatabaseReference walletRef = dbRef.child("wallet");
+        walletRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    HashMap<String, String> data = new HashMap<>();
+                    for (DataSnapshot row : snapshot.getChildren()) {
+                        data.put(row.getKey(), row.getValue().toString());
+                    }
+
+                    int nSalioKuu = Integer.parseInt(data.get("salioKuu"));
+                    int nThamaniHisa = Integer.parseInt((data.get("thamaniHisa")));
+                    int nIdadiMiadi = Integer.parseInt(data.get("idadiMiadi"));
+                    int nHisaKusubiri = Integer.parseInt(data.get("hisaKusubiri"));
+
+                    salioKuu.setText(nSalioKuu + "");
+                    thamaniHisa.setText(nThamaniHisa + "");
+                    idadiMiadi.setText(nIdadiMiadi + "");
+                    hisaKusubiri.setText(nHisaKusubiri + "");
+
+                    int nJumlaKuu = nSalioKuu + nThamaniHisa + nHisaKusubiri;
+                    jumlaKuu.setText(nJumlaKuu + "");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
         
         name.setText(userInfo.get("firstName") + " " + userInfo.get("lastName"));
 
-        if (walletInfo.size() > 0){
-            int nSalioKuu = Integer.parseInt(walletInfo.get("salioKuu"));
-            int nThamaniHisa = Integer.parseInt((walletInfo.get("thamaniHisa")));
-            int nIdadiMiadi = Integer.parseInt(walletInfo.get("idadiMiadi"));
-            int nHisaKusubiri = Integer.parseInt(walletInfo.get("hisaKusubiri"));
-
-            salioKuu.setText(nSalioKuu + "");
-            thamaniHisa.setText(nThamaniHisa + "");
-            idadiMiadi.setText(nIdadiMiadi + "");
-            hisaKusubiri.setText(nHisaKusubiri + "");
-
-            int nJumlaKuu = nSalioKuu + nThamaniHisa + nHisaKusubiri;
-            jumlaKuu.setText(nJumlaKuu + "");
-        }
 
         Button nunuaHisaBtn, uzaHisaBtn, ongezaSalioBtn, tumaSalioBtn;
         nunuaHisaBtn = d.findViewById(R.id.button8);
@@ -117,27 +164,37 @@ public class WalletFragment extends Fragment {
         ongezaSalioBtn = d.findViewById(R.id.button10);
         tumaSalioBtn = d.findViewById(R.id.button11);
 
-
+        View.OnClickListener listener = view -> doTransacton();
+        nunuaHisaBtn.setOnClickListener(listener);
+        uzaHisaBtn.setOnClickListener(listener);
+        ongezaSalioBtn.setOnClickListener(listener);
+        tumaSalioBtn.setOnClickListener(listener);
 
         return d;
     }
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        this.context = context;
+    }
+
     private void doTransacton() {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle("Nunua hisa");
+//        builder.setTitle("Nunua hisa");
 
-        View view = getLayoutInflater().inflate(R.layout.dialog_nunua_hisa, null);
+        View view = getLayoutInflater().inflate(R.layout.dialog_transaction, null);
         builder.setView(view);
-        EditText edt_kiasi = view.findViewById(R.id.edt_kiasi);
-        EditText edt_neno_siri = view.findViewById(R.id.edt_neno_siri);
-        EditText edt_rudia_neno_siri = view.findViewById(R.id.edt_rudia_neno_siri);
-        TextView cancel_button = view.findViewById(R.id.cancel_button);
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) EditText edt_kiasi = view.findViewById(R.id.edt_kiasi_trans);
+        EditText edt_neno_siri = view.findViewById(R.id.edt_neno_siri_trans);
+        EditText edt_rudia_neno_siri = view.findViewById(R.id.edt_rudia_neno_siri_trans);
+        TextView cancel_button = view.findViewById(R.id.cancel_button_trans);
 
-        Button btn_nunua_hisa = view.findViewById(R.id.btn_nunua_hisa);
+        Button btnTransation = view.findViewById(R.id.btn_trans);
 
         final AlertDialog dialog = builder.create();
 
-        btn_nunua_hisa.setOnClickListener(view1 -> {
+        btnTransation.setOnClickListener(view1 -> {
             if (edt_kiasi.getText().toString().isEmpty()) {
                 edt_kiasi.setError("Tafadhali weka kiasi!");
                 edt_kiasi.requestFocus();
@@ -151,7 +208,8 @@ public class WalletFragment extends Fragment {
                 edt_rudia_neno_siri.setError("Neno siri halifanani");
                 edt_rudia_neno_siri.requestFocus();
             } else {
-                Toast.makeText(context, "Hello", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Muamala wako unashughulikiwa!", Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
             }
         });
 

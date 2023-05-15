@@ -28,6 +28,7 @@
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -67,9 +68,9 @@
                     android:layout_height="150dp"
                     android:layout_marginEnd="2dp"
                     android:layout_weight="1"
-                    app:shapeAppearanceOverlay="@style/roundedImageSmall"
                     android:background="@color/faint_screen"
-                    android:scaleType="centerCrop" />
+                    android:scaleType="centerCrop"
+                    app:shapeAppearanceOverlay="@style/roundedImageSmall" />
 
                 <com.google.android.material.imageview.ShapeableImageView
                     android:id="@+id/imageView13"
@@ -77,9 +78,9 @@
                     android:layout_height="150dp"
                     android:layout_marginStart="3dp"
                     android:layout_weight="1"
-                    app:shapeAppearanceOverlay="@style/roundedImageSmall"
                     android:background="@color/faint_screen"
-                    android:scaleType="centerCrop" />
+                    android:scaleType="centerCrop"
+                    app:shapeAppearanceOverlay="@style/roundedImageSmall" />
 
             </LinearLayout>
 
@@ -110,6 +111,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView24" />
 
             <LinearLayout
+                android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="16dp"
@@ -125,29 +127,24 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:backgroundTint="#19A85E"
+                    android:drawableLeft="@drawable/baseline_show_chart_24"
                     android:text="Nunua hisa"
                     android:textAllCaps="false"
-                    android:textSize="12sp" />
+                    android:textSize="14sp" />
 
                 <Button
                     android:id="@+id/button4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
+                    android:layout_marginStart="8dp"
                     android:layout_weight="1"
+                    android:backgroundTint="#D55555"
+                    android:drawableLeft="@drawable/baseline_show_chart_24"
                     android:text="Uza hisa"
                     android:textAllCaps="false"
-                    android:textSize="12sp" />
+                    android:textSize="14sp" />
 
-                <Button
-                    android:id="@+id/button5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:layout_weight="1"
-                    android:text="Miadi ya kazi"
-                    android:textAllCaps="false"
-                    android:textSize="12sp" />
             </LinearLayout>
 
             <TextView
@@ -163,6 +160,18 @@
                 app:layout_constraintEnd_toEndOf="@+id/textView25"
                 app:layout_constraintStart_toStartOf="@+id/textView25"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Miadi ya kazi"
+                android:textAllCaps="false"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+                app:layout_constraintStart_toStartOf="@+id/linearLayout"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
             <TableLayout
                 android:id="@+id/tableLayout2"

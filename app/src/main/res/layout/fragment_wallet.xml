@@ -51,16 +51,26 @@
                     app:layout_constraintStart_toStartOf="@+id/imageView4"
                     app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/black_credit_card"
+                    app:layout_constraintBottom_toBottomOf="@+id/linearLayout3"
+                    app:layout_constraintEnd_toEndOf="@+id/linearLayout3"
+                    app:layout_constraintStart_toStartOf="@+id/linearLayout3"
+                    app:layout_constraintTop_toTopOf="@+id/linearLayout3" />
+
                 <LinearLayout
+                    android:id="@+id/linearLayout3"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="8dp"
-                    android:background="@drawable/blue_box"
                     android:orientation="vertical"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="15dp"
+                    android:paddingTop="18dp"
+                    android:paddingBottom="25dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView15">
@@ -68,7 +78,7 @@
                     <TableLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="19dp"
+                        android:layout_marginStart="23dp"
                         android:layout_marginTop="4dp"
                         android:layout_marginEnd="15dp">
 
@@ -81,14 +91,15 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Salio kuu"
-                                android:textColor="@color/white" />
+                                android:textColor="@color/textColor" />
 
                             <TextView
                                 android:id="@+id/textView47"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="1,153,000"
-                                android:textColor="@color/white" />
+                                android:text="0"
+                                android:textColor="@color/textColor"
+                                android:textStyle="bold" />
                         </TableRow>
 
                         <TableRow
@@ -99,14 +110,15 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Thamani ya hisa"
-                                android:textColor="@color/white" />
+                                android:textColor="@color/textColor" />
 
                             <TextView
                                 android:id="@+id/textView49"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="568,000"
-                                android:textColor="@color/white" />
+                                android:text="0"
+                                android:textColor="@color/textColor"
+                                android:textStyle="bold" />
                         </TableRow>
 
                         <TableRow
@@ -117,14 +129,15 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Miadi ya kazi"
-                                android:textColor="@color/white" />
+                                android:textColor="@color/textColor" />
 
                             <TextView
                                 android:id="@+id/textView51"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="15"
-                                android:textColor="@color/white" />
+                                android:text="0"
+                                android:textColor="@color/textColor"
+                                android:textStyle="bold" />
                         </TableRow>
 
                         <TableRow
@@ -136,14 +149,15 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginEnd="24dp"
                                 android:text="Hisa zinazosubiri uthibitisho"
-                                android:textColor="@color/white" />
+                                android:textColor="@color/textColor" />
 
                             <TextView
                                 android:id="@+id/textView53"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="420,500"
-                                android:textColor="@color/white" />
+                                android:text="0"
+                                android:textColor="@color/textColor"
+                                android:textStyle="bold" />
                         </TableRow>
 
                     </TableLayout>
@@ -157,7 +171,7 @@
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginStart="19dp"
+                        android:layout_marginStart="23dp"
                         android:layout_marginTop="12dp"
                         android:layout_marginEnd="15dp">
 
@@ -165,15 +179,15 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="JUMLA KUU"
-                            android:textColor="@color/white" />
+                            android:textColor="@color/textColor" />
 
                         <TextView
                             android:id="@+id/textView3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp"
-                            android:text="1000,000"
-                            android:textColor="@color/white"
+                            android:text="0"
+                            android:textColor="@color/textColor"
                             android:textSize="16sp"
                             android:textStyle="bold" />
                     </TableRow>
@@ -186,6 +200,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp">
 
                 <TableRow
@@ -197,6 +212,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:backgroundTint="#0BAA65"
+                        android:drawableLeft="@drawable/baseline_show_chart_24"
                         android:text="Nunua hisa"
                         android:textAllCaps="false" />
 
@@ -206,6 +223,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="6dp"
                         android:layout_weight="1"
+                        android:backgroundTint="#EF5555"
+                        android:drawableLeft="@drawable/baseline_show_chart_24"
                         android:text="Uza hisa"
                         android:textAllCaps="false" />
                 </TableRow>
@@ -219,6 +238,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:drawableLeft="@drawable/baseline_add_24"
                         android:text="Ongeza salio"
                         android:textAllCaps="false" />
 
@@ -228,6 +248,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="6dp"
                         android:layout_weight="1"
+                        android:drawableLeft="@drawable/baseline_send_24"
                         android:text="Tuma salio"
                         android:textAllCaps="false" />
                 </TableRow>

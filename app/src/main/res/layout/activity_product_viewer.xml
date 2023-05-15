@@ -28,6 +28,7 @@
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -67,9 +68,9 @@
                     android:layout_height="150dp"
                     android:layout_marginEnd="2dp"
                     android:layout_weight="1"
-                    app:shapeAppearanceOverlay="@style/roundedImageSmall"
                     android:background="@color/faint_screen"
-                    android:scaleType="centerCrop" />
+                    android:scaleType="centerCrop"
+                    app:shapeAppearanceOverlay="@style/roundedImageSmall" />
 
                 <com.google.android.material.imageview.ShapeableImageView
                     android:id="@+id/imageView13p"
@@ -77,9 +78,9 @@
                     android:layout_height="150dp"
                     android:layout_marginStart="3dp"
                     android:layout_weight="1"
-                    app:shapeAppearanceOverlay="@style/roundedImageSmall"
                     android:background="@color/faint_screen"
-                    android:scaleType="centerCrop" />
+                    android:scaleType="centerCrop"
+                    app:shapeAppearanceOverlay="@style/roundedImageSmall" />
 
             </LinearLayout>
 
@@ -123,7 +124,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
-                android:background="@drawable/white_dark_button"
+                android:background="@drawable/blue_button_shade"
                 android:text="Nunua"
                 android:textAllCaps="false"
                 android:textSize="18sp"

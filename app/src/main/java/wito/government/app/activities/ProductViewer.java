@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -51,7 +52,7 @@ public class ProductViewer extends AppCompatActivity {
         HashMap<String, String> data = (HashMap<String, String>) getIntent().getSerializableExtra("info");
 
         TextView title, kuanzaTxt, about, kumalizaTxt, eneoTxt;
-        Button bookBtn;
+        Button nunuaBtn;
         ImageView photo = findViewById(R.id.imageView13p);
         ImageView photo2 = findViewById(R.id.imageView9p);
         progressBar = findViewById(R.id.progressBarp);
@@ -69,7 +70,7 @@ public class ProductViewer extends AppCompatActivity {
         title = findViewById(R.id.textView26p);
 //        kuanzaTxt = findViewById(R.id.textView64p);
         about = findViewById(R.id.textView25p);
-        bookBtn = findViewById(R.id.button6p);
+        nunuaBtn = findViewById(R.id.button6p);
 //        kumalizaTxt = findViewById(R.id.textView66p);
 //        eneoTxt = findViewById(R.id.textView27p);
 
@@ -89,6 +90,7 @@ public class ProductViewer extends AppCompatActivity {
         player.setMediaSource(mediaSource);
         player.prepare();
         PlayerView playerView = findViewById(R.id.player_viewp);
+//        playerView.setUseController(false);
         playerView.setPlayer(player);
         player.play();
 
@@ -108,22 +110,47 @@ public class ProductViewer extends AppCompatActivity {
         });
 
 
-        bookBtn.setOnClickListener(go -> {
-
-            new AlertDialog.Builder(ProductViewer.this)
-                    .setTitle("Confirm")
-                    .setMessage("Are you sure you want to buy this product?")
-                    .setPositiveButton("YES", (dialog, d) -> {
-                        Intent back = new Intent(getApplicationContext(), Home.class);
-                        showToast("Order sent!");
-                        startActivity(back);
-                        finish();
-                    }).setNegativeButton("NO", (n, nn) -> {
-                        // Do nothing!
-                    }).show();
-
-
+        nunuaBtn.setOnClickListener(go -> {
+            uzaHisa();
         });
+    }
+
+    private void uzaHisa() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(ProductViewer.this);
+        builder.setTitle("Nunua bidhaa");
+
+        View view = getLayoutInflater().inflate(R.layout.dialog_nunua_bidhaa, null);
+        builder.setView(view);
+        EditText edt_kiasi = view.findViewById(R.id.edt_kiasi_uza);
+        EditText edt_neno_siri = view.findViewById(R.id.edt_neno_siri_uza);
+        EditText edt_rudia_neno_siri = view.findViewById(R.id.edt_rudia_neno_siri_uza);
+        TextView cancel_button = view.findViewById(R.id.cancel_button_uza);
+
+        Button btn_uza_hisa = view.findViewById(R.id.btn_uza_hisa);
+
+        final AlertDialog dialog = builder.create();
+
+        btn_uza_hisa.setOnClickListener(view1 -> {
+            if (edt_kiasi.getText().toString().isEmpty()) {
+                edt_kiasi.setError("Tafadhali weka kiasi!");
+                edt_kiasi.requestFocus();
+            } else if (edt_neno_siri.getText().toString().trim().isEmpty()) {
+                edt_neno_siri.setError("Tafadhali ingiza neno siri!");
+                edt_neno_siri.requestFocus();
+            } else if (edt_rudia_neno_siri.getText().toString().trim().isEmpty()) {
+                edt_rudia_neno_siri.setError("Tafadhali rudia neno siri!");
+                edt_rudia_neno_siri.requestFocus();
+            } else if (!edt_neno_siri.getText().toString().trim().equals(edt_rudia_neno_siri.getText().toString().trim())) {
+                edt_rudia_neno_siri.setError("Neno siri halifanani");
+                edt_rudia_neno_siri.requestFocus();
+            } else {
+                Toast.makeText(ProductViewer.this, "Oda yako imepokelewa!", Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
+            }
+        });
+
+        cancel_button.setOnClickListener(view12 -> dialog.dismiss());
+        dialog.show();
     }
 
     @Override

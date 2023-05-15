@@ -31,6 +31,7 @@ public class Home extends AppCompatActivity {
 
     ViewPager viewPager;
     BottomNavigationView bottomNavigationView;
+    public static String phone;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -42,8 +43,6 @@ public class Home extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.notification_menu) {
             startActivity(new Intent(getApplicationContext(), Notifications.class));
-        } else if (item.getItemId() == R.id.settings_menu) {
-            startActivity(new Intent(getApplicationContext(), Settings.class));
         } else if (item.getItemId() == R.id.about_menu) {
             startActivity(new Intent(getApplicationContext(), About.class));
         }
@@ -59,6 +58,7 @@ public class Home extends AppCompatActivity {
         getSupportActionBar().setTitle("WITO");
         AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_NO);
         getSupportActionBar().setElevation(0);
+        phone = getIntent().getStringExtra("phone");
 
         viewPager = findViewById(R.id.viewPager);
         bottomNavigationView = findViewById(R.id.bottomNavigationView);

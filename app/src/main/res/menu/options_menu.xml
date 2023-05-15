@@ -7,9 +7,6 @@
         android:icon="@drawable/baseline_notifications_24"
         android:title="Notifications" />
     <item
-        android:id="@+id/settings_menu"
-        android:title="Settings" />
-    <item
         android:id="@+id/about_menu"
         android:title="About" />
 </menu>
