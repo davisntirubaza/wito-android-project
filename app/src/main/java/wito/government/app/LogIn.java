@@ -48,13 +48,14 @@ public class LogIn extends AppCompatActivity {
         mgeniBtn = findViewById(R.id.button7);
 
         mgeniBtn.setOnClickListener(r -> startActivity(new Intent(getApplicationContext(), Register.class)));
-//        DatabaseHelper databaseHelper = new DatabaseHelper(getApplicationContext());
-//        HashMap<String, String> data = databaseHelper.getTableData("userInfo");
-//        String savedphone = data.get("phone");
-//        String savedpassword = data.get("password");
+        /*
+        DatabaseHelper databaseHelper = new DatabaseHelper(getApplicationContext());
+        HashMap<String, String> data = databaseHelper.getTableData("userInfo");
+        String savedphone = data.get("phone");
+        String savedpassword = data.get("password");
 
-//        showToast("DATA = " + data);
-
+        showToast("DATA = " + data);
+*/
         DatabaseReference userRef = FirebaseDatabase.getInstance().getReference("users");
         userRef.addValueEventListener(new ValueEventListener() {
             @Override

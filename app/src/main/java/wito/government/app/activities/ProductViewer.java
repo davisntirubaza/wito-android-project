@@ -111,19 +111,17 @@ public class ProductViewer extends AppCompatActivity {
 
 
         nunuaBtn.setOnClickListener(go -> {
-            uzaHisa();
+            NunuaBidhaa();
         });
     }
 
-    private void uzaHisa() {
+    private void NunuaBidhaa() {
         AlertDialog.Builder builder = new AlertDialog.Builder(ProductViewer.this);
-        builder.setTitle("Nunua bidhaa");
 
         View view = getLayoutInflater().inflate(R.layout.dialog_nunua_bidhaa, null);
         builder.setView(view);
         EditText edt_kiasi = view.findViewById(R.id.edt_kiasi_uza);
         EditText edt_neno_siri = view.findViewById(R.id.edt_neno_siri_uza);
-        EditText edt_rudia_neno_siri = view.findViewById(R.id.edt_rudia_neno_siri_uza);
         TextView cancel_button = view.findViewById(R.id.cancel_button_uza);
 
         Button btn_uza_hisa = view.findViewById(R.id.btn_uza_hisa);
@@ -137,12 +135,6 @@ public class ProductViewer extends AppCompatActivity {
             } else if (edt_neno_siri.getText().toString().trim().isEmpty()) {
                 edt_neno_siri.setError("Tafadhali ingiza neno siri!");
                 edt_neno_siri.requestFocus();
-            } else if (edt_rudia_neno_siri.getText().toString().trim().isEmpty()) {
-                edt_rudia_neno_siri.setError("Tafadhali rudia neno siri!");
-                edt_rudia_neno_siri.requestFocus();
-            } else if (!edt_neno_siri.getText().toString().trim().equals(edt_rudia_neno_siri.getText().toString().trim())) {
-                edt_rudia_neno_siri.setError("Neno siri halifanani");
-                edt_rudia_neno_siri.requestFocus();
             } else {
                 Toast.makeText(ProductViewer.this, "Oda yako imepokelewa!", Toast.LENGTH_SHORT).show();
                 dialog.dismiss();

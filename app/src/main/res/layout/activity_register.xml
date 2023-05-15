@@ -59,11 +59,7 @@
                 android:ems="10"
                 android:hint="Jina la kwanza"
                 android:inputType="text|textCapWords"
-<<<<<<< HEAD
-                android:padding="14dp"
-=======
                 android:padding="16dp"
->>>>>>> 6b2d7a9dcea82fd888ffcd027622ae4ca747fb1a
                 android:paddingStart="15dp"
                 android:textSize="16sp" />
 
@@ -80,11 +76,7 @@
                 android:ems="10"
                 android:hint="Jina la mwisho"
                 android:inputType="text|textCapWords"
-<<<<<<< HEAD
-                android:padding="14dp"
-=======
                 android:padding="16dp"
->>>>>>> 6b2d7a9dcea82fd888ffcd027622ae4ca747fb1a
                 android:paddingStart="15dp"
                 android:textSize="16sp" />
 
@@ -101,11 +93,7 @@
                 android:ems="10"
                 android:hint="Namba ya simu"
                 android:inputType="phone"
-<<<<<<< HEAD
-                android:padding="14dp"
-=======
                 android:padding="16dp"
->>>>>>> 6b2d7a9dcea82fd888ffcd027622ae4ca747fb1a
                 android:paddingStart="15dp"
                 android:textSize="16sp" />
 
@@ -122,11 +110,7 @@
                 android:ems="10"
                 android:hint="Namba ya NIDA"
                 android:inputType="number"
-<<<<<<< HEAD
-                android:padding="14dp"
-=======
                 android:padding="16dp"
->>>>>>> 6b2d7a9dcea82fd888ffcd027622ae4ca747fb1a
                 android:paddingStart="15dp"
                 android:textSize="16sp" />
 
@@ -143,11 +127,7 @@
                 android:ems="10"
                 android:hint="Nenosiri"
                 android:inputType="textPassword"
-<<<<<<< HEAD
-                android:padding="14dp"
-=======
                 android:padding="16dp"
->>>>>>> 6b2d7a9dcea82fd888ffcd027622ae4ca747fb1a
                 android:paddingStart="15dp"
                 android:textSize="16sp" />
 
@@ -164,11 +144,7 @@
                 android:ems="10"
                 android:hint="Rudia nenosiri"
                 android:inputType="textPassword"
-<<<<<<< HEAD
-                android:padding="14dp"
-=======
                 android:padding="16dp"
->>>>>>> 6b2d7a9dcea82fd888ffcd027622ae4ca747fb1a
                 android:paddingStart="15dp"
                 android:textSize="16sp" />
 

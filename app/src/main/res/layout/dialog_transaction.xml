@@ -37,7 +37,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50sp"
                 android:layout_marginTop="15sp"
-                android:background="@drawable/gray_box"
+                android:background="@drawable/gray_border_line"
                 android:hint="Weka kiasi"
                 android:inputType="number"
                 android:paddingStart="16sp"
@@ -48,19 +48,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="50sp"
                 android:layout_marginTop="15sp"
-                android:background="@drawable/gray_box"
+                android:background="@drawable/gray_border_line"
                 android:hint="Neno siri"
                 android:inputType="textPassword"
-                android:paddingStart="16sp"
-                android:textSize="16sp" />
-
-            <EditText
-                android:id="@+id/edt_rudia_neno_siri_trans"
-                android:layout_width="match_parent"
-                android:layout_height="50sp"
-                android:layout_marginTop="15sp"
-                android:background="@drawable/gray_box"
-                android:hint="Rudia neno siri"
                 android:paddingStart="16sp"
                 android:textSize="16sp" />
 
@@ -78,9 +68,5 @@
 
         </LinearLayout>
     </FrameLayout>
-
-    <!--WEKA IMAGE YA DOLLA HYO, MIM NMEWEK YOYOTR TU HUKU-->
-
-    <!--BUTTON STYLE NADHAN UNAYO SO WEKA KUTOKAN N DESIGN YA HUKO-->
 
 </LinearLayout>

@@ -187,7 +187,6 @@ public class WalletFragment extends Fragment {
         builder.setView(view);
         @SuppressLint({"MissingInflatedId", "LocalSuppress"}) EditText edt_kiasi = view.findViewById(R.id.edt_kiasi_trans);
         EditText edt_neno_siri = view.findViewById(R.id.edt_neno_siri_trans);
-        EditText edt_rudia_neno_siri = view.findViewById(R.id.edt_rudia_neno_siri_trans);
         TextView cancel_button = view.findViewById(R.id.cancel_button_trans);
 
         Button btnTransation = view.findViewById(R.id.btn_trans);
@@ -201,12 +200,6 @@ public class WalletFragment extends Fragment {
             } else if (edt_neno_siri.getText().toString().trim().isEmpty()) {
                 edt_neno_siri.setError("Tafadhali ingiza neno siri!");
                 edt_neno_siri.requestFocus();
-            } else if (edt_rudia_neno_siri.getText().toString().trim().isEmpty()) {
-                edt_rudia_neno_siri.setError("Tafadhali rudia neno siri!");
-                edt_rudia_neno_siri.requestFocus();
-            } else if (!edt_neno_siri.getText().toString().trim().equals(edt_rudia_neno_siri.getText().toString().trim())) {
-                edt_rudia_neno_siri.setError("Neno siri halifanani");
-                edt_rudia_neno_siri.requestFocus();
             } else {
                 Toast.makeText(context, "Muamala wako unashughulikiwa!", Toast.LENGTH_SHORT).show();
                 dialog.dismiss();

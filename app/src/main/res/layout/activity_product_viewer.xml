@@ -48,7 +48,8 @@
                 android:layout_marginBottom="-12dp"
                 android:background="#EFEFEF"
                 app:layout_constraintBottom_toBottomOf="@+id/tableLayout2"
-                app:layout_constraintTop_toBottomOf="@+id/textView26p" />
+                app:layout_constraintTop_toBottomOf="@+id/textView26p"
+                tools:ignore="MissingConstraints" />
 
             <LinearLayout
                 android:id="@+id/linearLayout2"

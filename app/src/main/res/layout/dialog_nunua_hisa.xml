@@ -5,9 +5,6 @@
     android:orientation="vertical"
     android:padding="16sp">
 
-<<<<<<< HEAD
-    <FrameLayout
-=======
     <TextView
         android:id="@+id/cancel_button"
         android:layout_width="wrap_content"
@@ -41,6 +38,7 @@
         android:paddingStart="16sp"
         android:inputType="numberDecimal"
         android:background="@drawable/gray_border_line"/>
+    
 
     <View
         android:layout_marginTop="15sp"
@@ -98,168 +96,16 @@
 
     </LinearLayout>
     <LinearLayout
->>>>>>> 6b2d7a9dcea82fd888ffcd027622ae4ca747fb1a
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
 
         <TextView
-            android:id="@+id/cancel_button"
-            android:layout_width="wrap_content"
+            android:layout_width="0sp"
             android:layout_height="wrap_content"
-<<<<<<< HEAD
-            android:layout_gravity="end"
-            android:drawableStart="@drawable/baseline_close_24"
-            android:textSize="24sp" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:layout_width="98sp"
-                android:layout_height="98sp"
-                android:layout_gravity="center_horizontal"
-                android:padding="5sp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/baseline_monetization_on_24" />
-
-            <EditText
-                android:id="@+id/edt_kiasi"
-                android:layout_width="match_parent"
-                android:layout_height="50sp"
-                android:layout_marginTop="15sp"
-                android:background="@drawable/gray_box"
-                android:hint="Weka kiasi"
-                android:paddingStart="16sp"
-                android:textColor="#808080"
-                android:textSize="16sp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal"
-                android:weightSum="2">
-
-                <TextView
-                    android:layout_width="0sp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="start"
-                    android:text="Bei kabla ya kodi"
-                    android:textColor="@android:color/black"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:layout_width="0sp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="start"
-                    android:text="1,000/="
-                    android:textColor="@android:color/black"
-                    android:textSize="16sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:orientation="horizontal"
-                android:weightSum="2">
-
-                <TextView
-                    android:layout_width="0sp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="start"
-                    android:text="Bei pamoja na kodi"
-                    android:textColor="@android:color/black"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:layout_width="0sp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="start"
-                    android:text="1,800/="
-                    android:textColor="@android:color/black"
-                    android:textSize="16sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:orientation="horizontal"
-                android:weightSum="2">
-
-                <TextView
-                    android:layout_width="0sp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="start"
-                    android:text="Jumla"
-                    android:textColor="@android:color/black"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:layout_width="0sp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="start"
-                    android:text="2,800/="
-                    android:textColor="@android:color/black"
-                    android:textSize="16sp" />
-
-            </LinearLayout>
-
-            <EditText
-                android:id="@+id/edt_neno_siri"
-                android:layout_width="match_parent"
-                android:layout_height="50sp"
-                android:layout_marginTop="15sp"
-                android:background="@drawable/gray_box"
-                android:hint="Neno siri"
-                android:inputType="textPassword"
-                android:paddingStart="16sp"
-                android:textColor="#808080"
-                android:textSize="16sp" />
-
-            <EditText
-                android:id="@+id/edt_rudia_neno_siri"
-                android:layout_width="match_parent"
-                android:layout_height="50sp"
-                android:layout_marginTop="10sp"
-                android:background="@drawable/gray_box"
-                android:hint="Rudia neno siri"
-                android:paddingStart="16sp"
-                android:textColor="#808080"
-                android:textSize="16sp" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_nunua_hisa"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="15sp"
-                android:background="@drawable/blue_button_shade"
-                android:text="Kamilisha"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="18sp" />
-        </LinearLayout>
-    </FrameLayout>
-
-    <!--WEKA IMAGE YA DOLLA HYO, MIM NMEWEK YOYOTR TU HUKU-->
-
-    <!--BUTTON STYLE NADHAN UNAYO SO WEKA KUTOKAN N DESIGN YA HUKO-->
-=======
             android:layout_weight="1"
-            android:text="Jumla"
+            android:text="Bei pamoja na kodi"
             android:textSize="14sp"
             android:textColor="@android:color/black"
             android:gravity="start" />
@@ -268,7 +114,7 @@
             android:layout_width="0sp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="2,800/="
+            android:text="1,800/="
             android:textSize="14sp"
             android:textColor="@android:color/black"
             android:gravity="start" />
@@ -285,16 +131,6 @@
         android:background="@drawable/gray_border_line"
         android:inputType="textPassword"/>
 
-    <EditText
-        android:id="@+id/edt_rudia_neno_siri"
-        android:layout_width="match_parent"
-        android:layout_height="50sp"
-        android:layout_marginTop="15sp"
-        android:hint="Rudia neno siri"
-        android:paddingStart="16sp"
-        android:inputType="textPassword"
-        android:background="@drawable/gray_border_line"/>
-
     <androidx.appcompat.widget.AppCompatButton
         android:layout_marginTop="15sp"
         android:id="@+id/btn_nunua_hisa"
@@ -306,6 +142,5 @@
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="20sp"/>
->>>>>>> 6b2d7a9dcea82fd888ffcd027622ae4ca747fb1a
 
 </LinearLayout>

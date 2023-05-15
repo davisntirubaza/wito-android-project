@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -29,7 +28,6 @@ import com.google.android.exoplayer2.ui.PlayerView;
 import com.google.android.exoplayer2.upstream.DataSource;
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory;
 
-import wito.government.app.Home;
 import wito.government.app.R;
 
 import java.text.SimpleDateFormat;
@@ -158,7 +156,6 @@ public class ItemViewer extends AppCompatActivity {
         cancel_button.setOnClickListener(view12 -> dialog.dismiss());
         dialog.show();
     }
-
     private void UzaHisa() {
         AlertDialog.Builder builder = new AlertDialog.Builder(ItemViewer.this);
 
@@ -166,28 +163,7 @@ public class ItemViewer extends AppCompatActivity {
         builder.setView(view);
         EditText edt_kiasi = view.findViewById(R.id.edt_kiasi);
         EditText edt_neno_siri = view.findViewById(R.id.edt_neno_siri);
-        EditText edt_rudia_neno_siri = view.findViewById(R.id.edt_rudia_neno_siri);
         TextView cancel_button = view.findViewById(R.id.cancel_button);
-
-<<<<<<< HEAD
-        nunuaHisaBtn.setOnClickListener(listener);
-        uzaHisaBtn.setOnClickListener(l -> uzaHisa());
-        miadiBtn.setOnClickListener(m -> miadiYaKazi());
-    }
-
-    private void uzaHisa() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(ItemViewer.this);
-        builder.setTitle("Uza hisa");
-
-        View view = getLayoutInflater().inflate(R.layout.dialog_uza_hisa, null);
-        builder.setView(view);
-        EditText edt_kiasi = view.findViewById(R.id.edt_kiasi_uza);
-        EditText edt_neno_siri = view.findViewById(R.id.edt_neno_siri_uza);
-        EditText edt_rudia_neno_siri = view.findViewById(R.id.edt_rudia_neno_siri_uza);
-        TextView cancel_button = view.findViewById(R.id.cancel_button_uza);
-
-=======
->>>>>>> 6b2d7a9dcea82fd888ffcd027622ae4ca747fb1a
         Button btn_uza_hisa = view.findViewById(R.id.btn_uza_hisa);
 
         final AlertDialog dialog = builder.create();
@@ -199,20 +175,9 @@ public class ItemViewer extends AppCompatActivity {
             } else if (edt_neno_siri.getText().toString().trim().isEmpty()) {
                 edt_neno_siri.setError("Tafadhali ingiza neno siri!");
                 edt_neno_siri.requestFocus();
-            } else if (edt_rudia_neno_siri.getText().toString().trim().isEmpty()) {
-                edt_rudia_neno_siri.setError("Tafadhali rudia neno siri!");
-                edt_rudia_neno_siri.requestFocus();
-            } else if (!edt_neno_siri.getText().toString().trim().equals(edt_rudia_neno_siri.getText().toString().trim())) {
-                edt_rudia_neno_siri.setError("Neno siri halifanani");
-                edt_rudia_neno_siri.requestFocus();
             } else {
-<<<<<<< HEAD
                 Toast.makeText(ItemViewer.this, "Ombi lako linashughulikiwa!", Toast.LENGTH_SHORT).show();
                 dialog.dismiss();
-=======
-                dialog.dismiss();
-                Toast.makeText(ItemViewer.this, "Uza hisa", Toast.LENGTH_SHORT).show();
->>>>>>> 6b2d7a9dcea82fd888ffcd027622ae4ca747fb1a
             }
         });
 
@@ -227,7 +192,6 @@ public class ItemViewer extends AppCompatActivity {
         builder.setView(view);
         EditText edt_kiasi = view.findViewById(R.id.edt_kiasi);
         EditText edt_neno_siri = view.findViewById(R.id.edt_neno_siri);
-        EditText edt_rudia_neno_siri = view.findViewById(R.id.edt_rudia_neno_siri);
         TextView cancel_button = view.findViewById(R.id.cancel_button);
 
         Button btn_nunua_hisa = view.findViewById(R.id.btn_nunua_hisa);
@@ -241,14 +205,7 @@ public class ItemViewer extends AppCompatActivity {
             } else if (edt_neno_siri.getText().toString().trim().isEmpty()) {
                 edt_neno_siri.setError("Tafadhali ingiza neno siri!");
                 edt_neno_siri.requestFocus();
-            } else if (edt_rudia_neno_siri.getText().toString().trim().isEmpty()) {
-                edt_rudia_neno_siri.setError("Tafadhali rudia neno siri!");
-                edt_rudia_neno_siri.requestFocus();
-            } else if (!edt_neno_siri.getText().toString().trim().equals(edt_rudia_neno_siri.getText().toString().trim())) {
-                edt_rudia_neno_siri.setError("Neno siri halifanani");
-                edt_rudia_neno_siri.requestFocus();
             } else {
-<<<<<<< HEAD
                 Toast.makeText(ItemViewer.this, "Ombi lako linashughulikiwa!", Toast.LENGTH_SHORT).show();
                 dialog.dismiss();
             }
@@ -257,49 +214,6 @@ public class ItemViewer extends AppCompatActivity {
         cancel_button.setOnClickListener(view12 -> dialog.dismiss());
         dialog.show();
     }
-
-    private void miadiYaKazi() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(ItemViewer.this);
-        builder.setTitle("Miadi ya kazi");
-
-        View view = getLayoutInflater().inflate(R.layout.dialog_miadi_ya_kazi, null);
-        builder.setView(view);
-        EditText kuanziaTarehe = view.findViewById(R.id.edt_kuanzia_tarehe);
-        EditText hadiTarehe = view.findViewById(R.id.edt_hadi_tarehe);
-        EditText uthibitisho = view.findViewById(R.id.edt_thibitisha_miadi);
-        TextView cancel_button = view.findViewById(R.id.cancel_button_miadi);
-
-        Button btnThibitishaMiadi = view.findViewById(R.id.btn_kamilisha_miadi);
-
-        final AlertDialog dialog = builder.create();
-
-        btnThibitishaMiadi.setOnClickListener(view1 -> {
-            if (kuanziaTarehe.getText().toString().isEmpty()) {
-                kuanziaTarehe.setError("Tafadhali andika !");
-                kuanziaTarehe.requestFocus();
-            } else if (hadiTarehe.getText().toString().trim().isEmpty()) {
-                hadiTarehe.setError("Tafadhali andika tarehe ya kumaliza!");
-                hadiTarehe.requestFocus();
-            } else if (uthibitisho.getText().toString().trim().isEmpty()) {
-                uthibitisho.setError("Tafadhali rudia neno siri!");
-                uthibitisho.requestFocus();
-            } else if (uthibitisho.getText().toString().trim().isEmpty()) {
-                uthibitisho.setError("Ingiza uthibitisho wa mradi!");
-                uthibitisho.requestFocus();
-            } else {
-                Toast.makeText(ItemViewer.this, "Ombi lako linashughulikiwa!", Toast.LENGTH_SHORT).show();
-                dialog.dismiss();
-=======
-                dialog.dismiss();
-                Toast.makeText(ItemViewer.this, "Nunua hisa", Toast.LENGTH_SHORT).show();
->>>>>>> 6b2d7a9dcea82fd888ffcd027622ae4ca747fb1a
-            }
-        });
-
-        cancel_button.setOnClickListener(view12 -> dialog.dismiss());
-        dialog.show();
-    }
-
     private void DateChooser(TextView textView) {
         DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
             @Override
@@ -319,15 +233,10 @@ public class ItemViewer extends AppCompatActivity {
         };
         textView.setOnClickListener(v -> new DatePickerDialog(ItemViewer.this, dateSetListener, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH)).show());
     }
-
     @Override
     protected void onDestroy() {
         super.onDestroy();
         player.release();
     }
 
-
-    public void showToast(String message) {
-            Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
-        }
 }
