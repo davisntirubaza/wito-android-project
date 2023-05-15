@@ -59,7 +59,7 @@
                 android:ems="10"
                 android:hint="Jina la kwanza"
                 android:inputType="text|textCapWords"
-                android:padding="10dp"
+                android:padding="16dp"
                 android:paddingStart="15dp"
                 android:textSize="16sp" />
 
@@ -76,7 +76,7 @@
                 android:ems="10"
                 android:hint="Jina la mwisho"
                 android:inputType="text|textCapWords"
-                android:padding="10dp"
+                android:padding="16dp"
                 android:paddingStart="15dp"
                 android:textSize="16sp" />
 
@@ -93,7 +93,7 @@
                 android:ems="10"
                 android:hint="Namba ya simu"
                 android:inputType="phone"
-                android:padding="10dp"
+                android:padding="16dp"
                 android:paddingStart="15dp"
                 android:textSize="16sp" />
 
@@ -110,7 +110,7 @@
                 android:ems="10"
                 android:hint="Namba ya NIDA"
                 android:inputType="number"
-                android:padding="10dp"
+                android:padding="16dp"
                 android:paddingStart="15dp"
                 android:textSize="16sp" />
 
@@ -127,7 +127,7 @@
                 android:ems="10"
                 android:hint="Nenosiri"
                 android:inputType="textPassword"
-                android:padding="10dp"
+                android:padding="16dp"
                 android:paddingStart="15dp"
                 android:textSize="16sp" />
 
@@ -144,7 +144,7 @@
                 android:ems="10"
                 android:hint="Rudia nenosiri"
                 android:inputType="textPassword"
-                android:padding="10dp"
+                android:padding="16dp"
                 android:paddingStart="15dp"
                 android:textSize="16sp" />
 

@@ -26,12 +26,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="top"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="5dp"
+            android:layout_gravity="center|center_horizontal"
             android:orientation="vertical"
-            android:paddingBottom="30dp">
+            android:padding="20sp">
 
             <ImageView
                 android:layout_width="match_parent"
@@ -69,7 +66,7 @@
                 android:ems="10"
                 android:hint="Namba ya simu"
                 android:inputType="phone"
-                android:padding="10dp"
+                android:padding="16dp"
                 android:paddingStart="15dp"
                 android:textSize="16sp" />
 
@@ -86,7 +83,7 @@
                 android:ems="10"
                 android:hint="Nenosiri"
                 android:inputType="textPassword"
-                android:padding="10dp"
+                android:padding="16dp"
                 android:paddingStart="15dp"
                 android:textSize="16sp" />
 

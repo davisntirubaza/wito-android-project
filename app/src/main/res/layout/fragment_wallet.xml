@@ -192,44 +192,52 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button8"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Nunua hisa"
-                        android:textAllCaps="false" />
+                        android:textAllCaps="false"
+                        android:background="@drawable/gray_border_line" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button9"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="6dp"
                         android:layout_weight="1"
                         android:text="Uza hisa"
-                        android:textAllCaps="false" />
+                        android:textAllCaps="false"
+                        android:background="@drawable/gray_border_line" />
+
                 </TableRow>
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="15sp">
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button10"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Ongeza salio"
-                        android:textAllCaps="false" />
+                        android:textAllCaps="false"
+                        android:background="@drawable/gray_border_line" />
 
-                    <Button
+
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button11"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="6dp"
                         android:layout_weight="1"
                         android:text="Tuma salio"
-                        android:textAllCaps="false" />
+                        android:textAllCaps="false"
+                        android:background="@drawable/gray_border_line" />
+
                 </TableRow>
 
             </TableLayout>
